@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HEALTKART: Medicine Availability Tracker</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #d4fc79, #96e6a1);
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      color: #1a2e2a;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    h1:hover {
+      color: grey;
+      transform: scale(1.05);
+      text-shadow: 0 0 10px rgba(217, 254, 83, 0.6);
+    }
+
+    .button-container {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    .role-button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ffffff;
+      color: #1a2e2a;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+    }
+
+    .role-button:hover {
+      background-color: #d9fe53;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(217, 254, 83, 0.5);
+    }
+
+    .floating {
+      position: absolute;
+      font-size: 2rem;
+      animation: floatUp 6s linear infinite;
+      opacity: 0.8;
+      z-index: 1;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>HEALTKART: Medicine Availability Tracker</h1>
+
+  <div class="button-container">
+    <a href="adminlogin.html" class="role-button">Admin</a>
+    <a href="pharmacylogin.html" class="role-button">Pharmacy</a>
+    <a href="userlogin.html" class="role-button">User</a>
+  </div>
+
+  <!-- Floating Health Objects -->
+  <script>
+    const healthIcons = ['💊', '🩺', '🩹', '🧬', '🧪', '🧻', '🧯', '🧼', '🦠', '🚑', '💉', '👨‍⚕️', '👩‍⚕️'];
+
+    for (let i = 0; i < 40; i++) {
+      const icon = document.createElement('div');
+      icon.classList.add('floating');
+      icon.textContent = healthIcons[Math.floor(Math.random() * healthIcons.length)];
+      icon.style.left = Math.random() * 100 + 'vw';
+      icon.style.fontSize = Math.random() * 20 + 20 + 'px';
+      icon.style.animationDuration = (Math.random() * 2 + 3) + 's'; // 3–5s for faster speed
+      document.body.appendChild(icon);
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <style>
+        :root {
+            --primary-color: #0f6cbd;   /* blue from landing page */
+            --hover-color: #094b8a;
+            --bg-color: #1a1a2e;
+            --card-color: #2e2e42;
+            --text-color: #ffffff;
+            --shadow-color: rgba(0, 0, 0, 0.6);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px var(--shadow-color);
+        }
+
+        .dashboard {
+            margin: 60px auto;
+            width: 400px;
+            padding: 40px 30px;
+            background-color: var(--card-color);
+            border-radius: 12px;
+            box-shadow: 0 8px 20px var(--shadow-color);
+        }
+
+        .dashboard h2 {
+            text-align: center;
+            color: #e0e0e0;
+            margin-bottom: 30px;
+        }
+
+        .dashboard form {
+            margin-bottom: 20px;
+        }
+
+        .dashboard button {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-color);
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .dashboard button:hover {
+            background-color: var(--hover-color);
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Admin Dashboard</h1>
+    </div>
+
+    <div class="dashboard">
+        <h2>Choose an Action</h2>
+
+        <form action="pharmacistManager.jsp" method="get">
+            <button type="submit">➕ Add / Delete Pharmacist</button>
+        </form>
+
+        <form action="viewUser.jsp" method="post">
+            <button type="submit">👥 View Users</button>
+        </form>
+
+        <form action="viewMedicine.jsp" method="get">
+            <button type="submit">💊 View Medicine Requests</button>
+        </form>
+        
+         <form action="pharmPendingView.jsp" method="get">
+            <button type="submit">➕ Pending Pharmacist</button>
+            
+        </form>
+           <form action="pharmApprovedView.jsp" method="get">
+            <button type="submit">➕ Approved Pharmacist</button>
+            
+        </form>
+    </div>
+
+</body>
+</html>

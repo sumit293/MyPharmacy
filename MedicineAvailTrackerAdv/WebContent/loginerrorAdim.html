@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>404 Error - Lost in Space</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: radial-gradient(ellipse at bottom, #000010 0%, #000000 100%);
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+    }
+
+    .moon {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      font-size: 80px;
+      filter: drop-shadow(0 0 15px #fff);
+      z-index: 1;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 2s infinite alternate;
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.2; }
+      to { opacity: 1; }
+    }
+
+    .rocket {
+      position: absolute;
+      font-size: 30px;
+      animation: flyRocket linear infinite;
+    }
+
+    @keyframes flyRocket {
+      0% {
+        transform: translateX(-100px) rotate(45deg);
+        opacity: 0.3;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(120vw) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    .message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 30, 0.6);
+      padding: 40px;
+      border-radius: 20px;
+      border: 2px solid #0ff;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .message h1 {
+      font-size: 50px;
+      color: #ff5e5e;
+      margin: 0;
+    }
+
+    .message p {
+      font-size: 20px;
+      color: #ccc;
+    }
+
+    .message a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #0ff;
+      color: #000;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .message a:hover {
+      background: #0aa;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Moon -->
+  <div class="moon">🌕</div>
+
+  <!-- Error Message -->
+  <div class="message">
+    <h1>404 - Page Not Found</h1>
+    <p>You’ve drifted too far into space.</p>
+    <p>Also you have entered wrong id pass  for admin </p>
+    <a href="index.html">Return Home</a>
+  </div>
+
+  <!-- JavaScript to generate stars and rockets -->
+  <script>
+    // Stars
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.top = `${Math.random() * 100}vh`;
+      star.style.left = `${Math.random() * 100}vw`;
+      star.style.animationDelay = `${Math.random() * 2}s`;
+      document.body.appendChild(star);
+    }
+
+    // Rockets
+    for (let i = 0; i < 20; i++) {
+      const rocket = document.createElement('div');
+      rocket.className = 'rocket';
+      rocket.textContent = '🚀';
+      rocket.style.top = `${Math.random() * 100}vh`;
+      rocket.style.left = `${-100 - Math.random() * 300}px`;
+      rocket.style.animationDuration = `${5 + Math.random() * 10}s`;
+      rocket.style.animationDelay = `${Math.random() * 5}s`;
+      document.body.appendChild(rocket);
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Dashboard</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1c1c1c, #3a3a3a);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #00e6e6;
+      padding: 16px;
+      text-align: center;
+      color: #000;
+      font-size: 24px;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      flex-grow: 1;
+      background: url('https://www.transparenttextures.com/patterns/cubes.png');
+      animation: fadeIn 1s ease-in;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 18px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(8px);
+      font-size: 13px;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+    }
+
+    .card img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 10px;
+      border-radius: 50%;
+      background-color: #fff;
+      padding: 5px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .card p {
+      font-size: 12px;
+      opacity: 0.8;
+      margin-bottom: 10px;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 6px 14px;
+      background-color: #00e6e6;
+      color: #000;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .card a:hover {
+      background-color: #00bfbf;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #111;
+      color: #aaa;
+      font-size: 12px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .dashboard {
+        padding: 20px;
+        gap: 15px;
+     
+      }
+    }
+    .landing-btn {
+  display: block;
+  width: max-content;
+  margin: 40px auto 20px;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #00e6e6, #00bfbf);
+  color: #000;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(0, 230, 230, 0.6),
+              0 0 20px rgba(0, 191, 191, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: glowPulse 2s infinite ease-in-out;
+}
+
+.landing-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 230, 230, 0.9),
+              0 0 25px rgba(0, 191, 191, 0.6);
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(0, 230, 230, 0.5),
+                0 0 20px rgba(0, 191, 191, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 230, 230, 0.8),
+                0 0 30px rgba(0, 191, 191, 0.6);
+  }
+}
+    
+    
+  </style>
+</head>
+<body>
+
+<header>
+  Welcome to Your Dashboard
+</header>
+
+<div class="dashboard">
+
+  <div class="card">
+    <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="Search">
+    <h3>Search Medicine</h3>
+    <p>Find medicines near you.</p>
+    <a href="UsersearchMedicine.jsp">Search</a>
+  </div>
+
+  <div class="card">
+    <img src="https://cdn-icons-png.flaticon.com/512/891/891419.png" alt="Request">
+    <h3>Submit Request</h3>
+    <p>Request out-of-stock items.</p>
+    <a href="UserRequest.html">Request</a>
+  </div>
+
+  <div class="card">
+    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828859.png" alt="View">
+    <h3>View Response</h3>
+    <p>See pharmacy updates.</p>
+    <a href="viewResponse.jsp">View</a>
+  </div>
+
+  <div class="card">
+    <img src="https://cdn-icons-png.flaticon.com/512/2919/2919600.png" alt="Change Password">
+    <h3>Change Password</h3>
+    <p>Update your credentials.</p>
+    <a href="userPassword.html">Change</a>
+  </div>
+
+</div>
+<a href="index.html" class="landing-btn">Landing Page</a>
+
+<footer>
+  &copy; 2025 Your Pharmacy Portal. All rights reserved.
+</footer>
+
+</body>
+</html>

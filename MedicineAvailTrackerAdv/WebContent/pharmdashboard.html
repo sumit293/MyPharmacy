@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pharmacist Dashboard</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .dashboard {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+      width: 400px;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .dashboard h2 {
+      color: #ffffff;
+      margin-bottom: 30px;
+      animation: slideDown 0.6s ease-in-out;
+    }
+
+    .dashboard button {
+      width: 100%;
+      padding: 15px;
+      margin: 15px 0;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(120deg, #1de9b6, #1dc4e9);
+      transition: all 0.3s ease;
+      animation: popUp 0.4s ease-in-out forwards;
+    }
+
+    .dashboard button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(120deg, #00bfa5, #00acc1);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes popUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .footer {
+      margin-top: 20px;
+      color: #bbb;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="dashboard">
+    <h2>Welcome, Pharmacist</h2>
+    <button onclick="location.href='editInventry.html'">🧪 Edit Inventry</button>
+    <button onclick="location.href='pharmViewRequest.jsp'">📥 View Requests</button>
+    <button onclick="location.href='pharmchangepass.html'">🔑 Change Password</button>
+<button onclick="location.href='pharmViewMedicine.jsp'" style="display: flex; align-items: center; gap: 8px; padding: 10px 15px; border: none; background-color: #2196f3; color: white; border-radius: 5px; cursor: pointer;">
+    <img src="https://i.pinimg.com/736x/ef/f8/bc/eff8bc83b836cfb3eedd9efa258a3cac.jpg" alt="icon" style="width: 20px; height: 20px;">
+    View all medicine
+</button>
+    
+    <div class="footer">Medicine Avail Tracker © 2025</div>
+  </div>
+
+</body>
+</html>
